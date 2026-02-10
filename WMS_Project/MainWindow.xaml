@@ -7,25 +7,30 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Window.DataContext>
-        <local:EmployeeViewModel />
+        <local:EmployeeViewModel/>
     </Window.DataContext>
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
+    <WrapPanel>
+        <Border BorderBrush="Black" BorderThickness="1" CornerRadius="10" Padding="6" Margin="4">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
 
-        <Label Grid.Row="0" Grid.Column="0">Név:</Label>
-        <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Name}"/>
-        <Label Grid.Row="1" Grid.Column="0">Adószám:</Label>
-        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding TaxNumber}"/>
-        <Label Grid.Row="2" Grid.Column="0">Szabadnapok:</Label>
-        <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding DaysOff}"/>
-    </Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" FontWeight="Bold">Név:</Label>
+                <TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Text="{Binding Name}"/>
+                <Label Grid.Row="1" Grid.Column="0" FontWeight="Bold">Adószám:</Label>
+                <TextBlock Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Text="{Binding TaxNumber}"/>
+                <Label Grid.Row="2" Grid.Column="0" FontWeight="Bold">Kivett szabadnapok száma:</Label>
+                <TextBlock Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Text="{Binding DaysOff}"/>
+            </Grid>
+        </Border>
+    </WrapPanel>
 </Window>
